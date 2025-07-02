@@ -1,0 +1,342 @@
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c; /* Dark fallback background */
+    color: #e2e8f0; /* Light text color */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    /* Background image styles */
+    background-image: url('https://placehold.co/1920x1080/000000/FFFFFF/png?text=Abstract+Study+Background'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fixed background during scroll */
+}
+
+/* Main Container */
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align to top */
+    padding: 1rem;
+    padding-top: 3rem; /* Add some padding from the top */
+}
+
+/* Tool Card */
+.tool-card {
+    background-color: rgba(45, 55, 72, 0.9); /* Slightly transparent dark card background */
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 700px; /* Increased max-width for better layout */
+    width: 100%;
+    text-align: center;
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid #718096;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.lang-button {
+    background-color: #4a5568; /* Default background */
+    color: #e2e8f0; /* Default text color */
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-button:hover:not(.active) {
+    background-color: #616e7f;
+}
+
+.lang-button.active {
+    background-color: #a78bfa; /* Active background */
+    color: white;
+}
+
+/* Title */
+.title {
+    font-size: 2.25rem; /* Equivalent to text-3xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    color: #a78bfa; /* Purple color */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    text-align: center;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+    text-align: left; /* Align labels and inputs to left */
+}
+
+/* Labels */
+.label {
+    display: block; /* Equivalent to block */
+    color: #cbd5e0; /* Equivalent to text-gray-300 */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 700; /* Equivalent to font-bold */
+    margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+}
+
+/* Input Fields and Select */
+.input-field {
+    width: 100%; /* Equivalent to w-full */
+    padding: 0.75rem; /* Equivalent to p-3 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    background-color: #4a5568; /* Equivalent to bg-gray-700 */
+    color: #e2e8f0; /* Equivalent to text-white */
+    border: 1px solid #718096; /* Equivalent to border border-gray-600 */
+    outline: none; /* Equivalent to focus:outline-none */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.input-field:focus {
+    border-color: #a78bfa; /* Equivalent to focus:ring-purple-500 */
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.5); /* Equivalent to focus:ring-2 focus:ring-purple-500 */
+}
+.input-field::placeholder {
+    color: #a0aec0; /* Equivalent to placeholder-gray-400 */
+}
+
+/* Buttons */
+.button {
+    font-weight: 700; /* Equivalent to font-bold */
+    padding: 0.75rem 1.5rem; /* Equivalent to py-3 px-6 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Equivalent to transition duration-300 transform */
+    cursor: pointer;
+    border: none;
+    display: inline-block; /* For download buttons to be side-by-side */
+}
+
+.button:hover {
+    transform: translateY(-2px); /* Equivalent to hover:scale-105 (simplified) */
+}
+
+.button:disabled {
+    opacity: 0.5; /* Equivalent to disabled:opacity-50 */
+    cursor: not-allowed; /* Equivalent to disabled:cursor-not-allowed */
+}
+
+.primary-button {
+    background-color: #8b5cf6; /* Equivalent to bg-purple-600 */
+    color: white;
+    width: 100%; /* Equivalent to w-full */
+}
+.primary-button:hover {
+    background-color: #7c3aed; /* Equivalent to hover:bg-purple-700 */
+}
+
+.download-button {
+    background-color: #3b82f6; /* Equivalent to bg-blue-600 */
+    color: white;
+    margin: 0.5rem; /* Spacing between download buttons */
+}
+.download-button:hover {
+    background-color: #2563eb; /* Equivalent to hover:bg-blue-700 */
+}
+
+/* Error Message */
+.error-message {
+    color: #ef4444; /* Equivalent to text-red-500 */
+    margin-top: 1rem; /* Equivalent to mt-4 */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    text-align: center;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #a78bfa; /* Purple spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto; /* Equivalent to mt-8 mx-auto */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Worksheet Output */
+.worksheet-output {
+    margin-top: 2rem; /* Equivalent to mt-8 */
+    width: 100%;
+}
+
+.download-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+    gap: 1rem; /* Spacing between buttons */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+}
+
+/* Worksheet Preview */
+.worksheet-preview {
+    background-color: #ffffff; /* White background for worksheet */
+    color: #1a202c; /* Dark text for worksheet content */
+    padding: 1.5rem; /* Equivalent to p-6 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Equivalent to shadow-inner border border-gray-300 */
+    border: 1px solid #d1d5db;
+    word-break: break-word; /* Equivalent to break-words */
+    font-size: 16px; /* Base font size for readability */
+    line-height: 1.6;
+    text-align: left; /* Align worksheet content to left */
+}
+
+.worksheet-preview h2.worksheet-title {
+    font-size: 1.5rem; /* Equivalent to text-2xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    text-align: center;
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+    color: #1a202c; /* Darker text for headings on white background */
+}
+
+.worksheet-preview p.worksheet-info {
+    font-size: 1rem; /* Equivalent to text-md */
+    text-align: center;
+    margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+}
+
+.worksheet-preview strong {
+    font-weight: 700;
+}
+
+.worksheet-preview hr.worksheet-hr {
+    margin-top: 1rem; /* Equivalent to my-4 */
+    margin-bottom: 1rem; /* Equivalent to my-4 */
+    border-color: #e2e8f0; /* Equivalent to border-gray-300 */
+}
+
+.worksheet-preview h3.worksheet-heading {
+    font-size: 1.25rem; /* Equivalent to text-xl */
+    font-weight: 600; /* Equivalent to font-semibold */
+    margin-bottom: 0.75rem; /* Equivalent to mb-3 */
+    color: #1a202c; /* Darker text for headings on white background */
+}
+
+.worksheet-preview ol.worksheet-list, .worksheet-preview ul.worksheet-list {
+    list-style: decimal; /* Equivalent to list-decimal list-inside */
+    padding-left: 1.5em; /* Indent lists */
+    margin-bottom: 1rem;
+    list-style-position: inside; /* For better control in print */
+}
+
+.worksheet-preview ul.worksheet-list.no-bullet {
+    list-style: none; /* Equivalent to list-none */
+}
+
+.worksheet-preview li {
+    margin-bottom: 0.5rem; /* Equivalent to mb-2 */
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .tool-card {
+        padding: 1.5rem;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+    .button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .primary-button {
+        padding: 0.75rem 1.5rem; /* Keep main button larger */
+    }
+    .worksheet-preview {
+        padding: 1rem;
+    }
+    .worksheet-preview h2.worksheet-title {
+        font-size: 1.3rem;
+    }
+    .worksheet-preview h3.worksheet-heading {
+        font-size: 1.1rem;
+    }
+    .worksheet-preview p.worksheet-info, .worksheet-preview li {
+        font-size: 0.9rem;
+    }
+    .download-buttons {
+        flex-direction: column; /* Stack buttons on small screens */
+        gap: 0.75rem;
+    }
+    .download-button {
+        width: 100%; /* Full width for stacked buttons */
+        margin: 0; /* Remove horizontal margin for stacked buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-card {
+        padding: 1rem;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .input-field, .button {
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+    .primary-button {
+        padding: 0.7rem 1.2rem;
+    }
+    .worksheet-preview h2.worksheet-title {
+        font-size: 1.1rem;
+    }
+    .worksheet-preview h3.worksheet-heading {
+        font-size: 1rem;
+    }
+    .worksheet-preview p.worksheet-info, .worksheet-preview li {
+        font-size: 0.8rem;
+    }
+}
+
+/* Print specific styles for PDF generation */
+@media print {
+    body {
+        background-image: none !important;
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+    .main-container, .tool-card {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        min-height: auto !important;
+        justify-content: flex-start !important;
+    }
+    .worksheet-preview {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 1cm !important; /* Standard print margins */
+        page-break-after: always; /* Ensure each worksheet starts on a new page if needed */
+    }
+    /* Hide all UI elements not part of the worksheet for printing */
+    .form-group, .button, .error-message, .loading-spinner, .download-buttons, .title, .language-selector {
+        display: none !important;
+    }
+}
